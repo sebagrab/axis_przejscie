@@ -1,4 +1,5 @@
 from pathlib import Path
+
 import datetime
 import os
 import datetime
@@ -17,7 +18,7 @@ print(slowo.isupper())
 print(slowo.lower())
 print(slowo[2])
 print(slowo.find("o"))
-
+"""""
 txt = Path('C:\\Users\\grabowss\\Desktop\\IP_MKwiag.txt').read_text()
 print(txt.find('17'))
 k = txt.find("17")
@@ -61,3 +62,18 @@ while e > d:
 
 
     print("jest ok")
+"""""
+bufor = input("Ile ma być zdjęć : ")
+zdj=''
+i=1
+while i< int(bufor):
+    fname = "\\\\plkwim0taxlog57\\c$\\opis\\zdjecia\\"+ str(i)+'.jpg'
+
+    if not os.path.isfile(fname):
+        zdj = zdj + " ,"+str(i)
+       # print("Brak zdjecia : ",i)
+       # print(fname)
+    i=i+1
+
+print("Brak zdjęć :" , zdj[2:])
+
