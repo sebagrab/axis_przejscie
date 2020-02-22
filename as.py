@@ -56,5 +56,8 @@ while e > d:
     file.close()
     fileName = datetime.datetime.now()
 
-    print('dupa'
-          )
+    print('dupa')
+
+
+
+    print("jest ok")
