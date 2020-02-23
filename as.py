@@ -96,4 +96,4 @@ def create_file():
         file.write("Najnowsza znaleziona fikstura to " +bufor +"\r\n" + "Brak zdjec : "+ zdj[2:])
 
 create_file()
-
+a
