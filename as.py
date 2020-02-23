@@ -63,7 +63,19 @@ while e > d:
 
     print("jest ok")
 """""
-bufor = input("Ile ma być zdjęć : ")
+bufor=0
+txt = Path('\\\\plkwim0taxlog57\c$\opis\\fix.txt').read_text()
+dlugoscTekstu=1
+while dlugoscTekstu <= (len(txt)-10):
+    k = txt.find(";",dlugoscTekstu)
+    #print(txt[k-2:k])
+    dlugoscTekstu=k+1
+   # print ("edfefe",txt[k-2:k])
+    if txt[k-2:k].isdigit():
+         if int(txt[k-2:k]) > int(bufor):
+            bufor=txt[k-2:k]
+print("Najwieksza znaleziona fikstura to ",bufor)
+
 zdj=''
 i=1
 while i< int(bufor):
@@ -76,4 +88,12 @@ while i< int(bufor):
     i=i+1
 
 print("Brak zdjęć :" , zdj[2:])
+
+fileName = "\\\\plkwim0taxlog57\\c$\\opis\\zdjecia\\brak_zdjęć"
+
+def create_file():
+    with open(fileName+".txt", "w") as file:
+        file.write("Najnowsza znaleziona fikstura to " +bufor +"\r\n" + "Brak zdjec : "+ zdj[2:])
+
+create_file()
 
