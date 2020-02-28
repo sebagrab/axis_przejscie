@@ -1,9 +1,11 @@
 from pathlib import Path
-
+from subprocess import Popen, PIPE
+import shutil
 import datetime
 import os
 import datetime
 import shutil
+import subprocess
 print("hello")
 print('2+2')
 zmienna=1
@@ -63,6 +65,11 @@ while e > d:
 
     print("jest ok")
 """""
+
+winCMD = 'NET USE ' + "\\\\plkwim0taxlog57" + ' /User:' + "kwi_tester" + ' ' + "Poiuytrewq1"
+print(winCMD)
+subprocess.Popen(winCMD, stdout=subprocess.PIPE, shell=True)
+
 bufor=0
 txt = Path('\\\\plkwim0taxlog57\c$\opis\\fix.txt').read_text()
 dlugoscTekstu=1
