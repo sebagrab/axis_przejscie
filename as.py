@@ -66,9 +66,13 @@ while e > d:
     print("jest ok")
 """""
 
+### Funkcja mapowania dysku
+
 winCMD = 'NET USE ' + "\\\\plkwim0taxlog57" + ' /User:' + "kwi_tester" + ' ' + "Poiuytrewq1"
-print(winCMD)
+#print(winCMD)   #
 subprocess.Popen(winCMD, stdout=subprocess.PIPE, shell=True)
+
+####
 
 bufor=0
 txt = Path('\\\\plkwim0taxlog57\c$\opis\\fix.txt').read_text()
