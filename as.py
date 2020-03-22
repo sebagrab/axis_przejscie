@@ -107,3 +107,44 @@ def create_file():
         file.write("Najnowsza znaleziona fikstura to " +bufor +"\r\n" + "Brak zdjec : "+ zdj[2:])
 
 create_file()
+####################################
+bufor=0
+
+txt = Path('C:\\Users\\grabowss\\Desktop\\axx.txt').read_text()
+dl=10
+while dl <= (len(txt)):
+    k = txt.find("result == ",dl)
+    if dl == -1:
+        break
+    numer=txt[(k+11):(k+16)]
+    dl = k+17
+    k = txt.find("Fixtura nr ", dl)
+    if dl == -1:
+        break
+    fik = txt[(k + 11):(k + 13)]
+    dl = k + 13
+    k = txt.find(" Software : ", dl)
+    if dl == -1:
+        break
+    soft = txt[(k + 12):(k + 13)]
+    dl = k + 13
+    if soft == "S":
+        soft="Spider Client"
+    if soft == "M":
+        soft = "Manufacturing"
+    k = txt.find(" Hardware : ", dl)
+    if dl == -1:
+        break
+    hard = txt[(k + 12):(k + 13)]
+    dl = k + 13
+    if hard == "S":
+        hard="Spider Client"
+    if hard == "E":
+        hard = "Manufacturing"
+
+    print("%s,%s,%s,%s;" %(str(numer),soft,hard,str(fik)))
+
+
+
+
+
